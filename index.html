@@ -15,8 +15,7 @@
 
 <div class="box" >
     <h2>Add USER</h2>
-    <input type="text" name="Name" id="fullName" placeholder="Full Name" required> <br>
-    <!-- <input type="text" name="userName" id="userName" placeholder="User Name" required> <br> -->
+    <input type="text" name="Name" id="userName" placeholder="Full Name" required> <br>
     <input type="email" name="email" id="userEmail" placeholder="Email" required><br>
     <input type="text" name="addr" id="userAddr" placeholder="Address" required><br>
     <button type="submit" onclick="pushUser()">ADD USER</button><br>
@@ -24,7 +23,7 @@
 
 <div class="box" >
     <h2>Update USER</h2>
-    <input type="number" name="id" id="userID" placeholder="User Id" required> <br>
+    <input type="text" name="id" id="userID" placeholder="User Id" required> <br>
     <input type="text" name="Name" id="username" placeholder="Full Name"> <br>
     <input type="email" name="email" id="useremail" placeholder="Email"><br>
     <input type="text" name="addr" id="useraddr" placeholder="Address"><br>
@@ -33,7 +32,7 @@
 
 <div class="box" >
     <h2>Delete USER</h2>
-    <input type="number" name="userid" id="userid" placeholder="User Id" required><br>
+    <input type="text" name="userid" id="userid" placeholder="User Id" required><br>
     <button type="submit" onclick="deleteUser()">DELETE USER</button><br>
 
 </div>
@@ -87,7 +86,7 @@
 function getUsers(){
 
     document.getElementById("table-body").innerHTML = "";
-    axios.get(`https://nodecurd4.herokuapp.com/users`)
+    axios.get(`https://mongodb-nodejscheck.herokuapp.com/users`)
     .then(function (response) {
                     // console.log(response.data);
 
@@ -126,7 +125,7 @@ function getUser(){
 
     const id = document.getElementById("USERID").value;
     document.getElementById("taBody").innerHTML = "";
-    axios.get(`https://nodecurd4.herokuapp.com/user/`+id)
+    axios.get(`https://mongodb-nodejscheck.herokuapp.com/user/`+id)
     .then(function (response) {
                     // console.log(response.data);
 
@@ -152,7 +151,7 @@ function  pushUser(){
     const name = document.getElementById("userName").value;
     const email = document.getElementById("userEmail").value;
     const addr = document.getElementById("userAddr").value;
-    axios.post(`https://nodecurd4.herokuapp.com/user/`, {
+    axios.post(`https://mongodb-nodejscheck.herokuapp.com/user/`, {
     name: name,
     email: email,
     address: addr
@@ -175,7 +174,7 @@ function updateUser(){
     const name = document.getElementById("username").value;
     const email = document.getElementById("useremail").value;
     const addr = document.getElementById("useraddr").value;
-    axios.put(`https://nodecurd4.herokuapp.com/user/`+id, {
+    axios.put(`https://mongodb-nodejscheck.herokuapp.com/user/`+id, {
     name: name,
     email: email,
     address: addr
@@ -194,7 +193,7 @@ function updateUser(){
 function deleteUser(){
     const id = document.getElementById("userid").value;
 
-    axios.delete(`https://nodecurd4.herokuapp.com/user/`+id)
+    axios.delete(`https://mongodb-nodejscheck.herokuapp.com/user/`+id)
     .then(function(response){
         alert(response.status+" User Sucessfully Deleted");
     })

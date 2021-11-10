@@ -48,12 +48,11 @@ app.get('/user/:id', (req, res) => {
 })
 app.post('/user', (req, res) => {
 
-  if (!req.body.name || !req.body.email || !req.body.address || !req.body.username) {
+  if (!req.body.name || !req.body.email || !req.body.address) {
     res.status(400).send("invalid data");
   } else {
     const newUser = new User({
       name: req.body.name,
-      username:req.body.username,
       email: req.body.email,
       address: req.body.address
     });
