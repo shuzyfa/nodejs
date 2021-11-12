@@ -106,12 +106,14 @@
                         var btnEdit = document.createElement('button');
                         var btnClose = document.createElement('button');
                         btnEdit.appendChild(document.createTextNode("Edit"));
+                        btnEdit.style.cssText = 'text-align: center !important ;padding: 7px; border:2px solid black; background-color: rgb(184, 236, 135); margin-right: 7px;';
                         btnEdit.addEventListener('click', function () {
                             // delete the column here
                             updateUser(rowData._id);
                         });
                         // btnEdit.onclick= updateUser(rowData._id);
                         btnClose.appendChild(document.createTextNode("Delete"));
+                        btnClose.style.cssText = 'text-align: center !important ;padding: 7px; border:2px solid black; background-color: rgb(236, 132, 90);';
                         btnClose.addEventListener('click', function () {
                             // delete the column here
                             deleteUser(rowData._id)
