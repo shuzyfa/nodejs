@@ -99,7 +99,9 @@ function pushUser() {
             console.log(error);
         });
 
-
+        document.getElementById("userName").value = ""
+        document.getElementById("userEmail").value = ""
+        document.getElementById("userAddr").value = ""
 }
 
 
@@ -122,7 +124,9 @@ function updateUser(id){
     console.log(error);
   });
 
-
+  document.getElementById("username").value = ""
+  document.getElementById("useremail").value = ""
+  document.getElementById("useraddr").value = ""
 
 }
 
